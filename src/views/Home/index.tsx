@@ -69,56 +69,58 @@ export default function Home() {
 
   return (
     <div className="bg-gradient-to-r from-indigo-200 to-indigo-50 min-h-screen p-5 flex  flex-col">
-      <div className="w-full justify-center flex gap-2">
-        <div className="flex-1 max-w-96 mb-2  ">
-          <select
-            id="countries"
-            className="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-black h-14 font-montserrat text-lg "
-            onChange={(e) => setCourier(e.target.value)}
-          >
-            <option selected>Pilih Courier</option>
-            {listCouriers.map((item) => (
-              <option value={item.code} key={item.code}>
-                {item.description}
-              </option>
-            ))}
-          </select>
+      <div className="bg-white mx-auto w-full max-w-[500px] p-5 box-border rounded-lg shadow-sm">
+        <div className="w-full justify-center flex gap-2">
+          <div className="flex-1 max-w-96 mb-2  ">
+            <select
+              id="countries"
+              className="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-black h-14 font-montserrat text-lg "
+              onChange={(e) => setCourier(e.target.value)}
+            >
+              <option selected>Pilih Courier</option>
+              {listCouriers.map((item) => (
+                <option value={item.code} key={item.code}>
+                  {item.description}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="w-14" />
         </div>
-        <div className="w-14" />
-      </div>
-      <div className="w-full flex justify-center gap-2">
-        <Input
-          className="font-montserrat h-14 text-lg rounded-lg max-w-96"
-          placeholder="Masukkan nomor resi..."
-          onChange={(e) => setResi(e.target.value)}
-        />
-        <Button
-          disabled={isLoading}
-          className="font-montserrat h-14 text-lg rounded-full w-14"
-          onClick={handleGetResi}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            className="w-6 h-6"
+        <div className="w-full flex justify-center gap-2">
+          <Input
+            className="font-montserrat h-14 text-lg rounded-lg max-w-96"
+            placeholder="Masukkan nomor resi..."
+            onChange={(e) => setResi(e.target.value)}
+          />
+          <Button
+            disabled={isLoading}
+            className="font-montserrat h-14 text-lg rounded-full w-14"
+            onClick={handleGetResi}
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-          </svg>
-        </Button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </Button>
+        </div>
       </div>
       {isLoading ? (
         <div className="bg-white mx-auto w-full max-w-[500px] mt-8 p-5 rounded-lg shadow-md relative overflow-hidden">
           <p className="font-montserrat text-center">Loading...</p>
         </div>
       ) : null}
-      {data ? (
+      {data && !isLoading ? (
         <div className="bg-white mx-auto w-full max-w-[500px] mt-8 p-5 rounded-lg shadow-md relative overflow-hidden">
           <div className="absolute right-0 top-0 bg-blue-200 text-blue-500 rounded-bl-lg p-2">
             <p className="font-montserrat text-sm font-medium">
