@@ -113,6 +113,11 @@ export default function Home() {
           </svg>
         </Button>
       </div>
+      {isLoading ? (
+        <div className="bg-white mx-auto w-full max-w-[500px] mt-8 p-5 rounded-lg shadow-md relative overflow-hidden">
+          <p className="font-montserrat text-center">Loading...</p>
+        </div>
+      ) : null}
       {data ? (
         <div className="bg-white mx-auto w-full max-w-[500px] mt-8 p-5 rounded-lg shadow-md relative overflow-hidden">
           <div className="absolute right-0 top-0 bg-blue-200 text-blue-500 rounded-bl-lg p-2">
