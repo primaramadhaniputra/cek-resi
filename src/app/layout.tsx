@@ -2,6 +2,7 @@ import {Analytics} from "@vercel/analytics/react";
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -20,6 +21,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>Cek Resi</title>
+        <meta name="description" content="Cek nomor resi pengiriman paket" />
+        <meta
+          name="keywords"
+          content="resi, nomor, nomor resi, paket, jnt, jne, belanja online, tracking, delivery"
+        />
+        <meta property="og:title" content="Cek Resi" />
+        <meta
+          property="og:description"
+          content="Cek nomor resi pengiriman paket"
+        />
+        <meta property="og:image" content="https://example.com/logo.jpg" />
+        <meta property="og:url" content="https://example.com/cek-resi" />
+        <meta name="twitter:title" content="Cek Resi" />
+        <meta
+          name="twitter:description"
+          content="Cek nomor resi pengiriman paket"
+        />
+        <meta name="twitter:image" content="https://example.com/logo.jpg" />
+      </Head>
       <body className={inter.className}>
         {children}
         <Analytics />
