@@ -33,14 +33,10 @@ export default function RootLayout({
           property="og:description"
           content="Cek nomor resi pengiriman paket"
         />
-        <meta property="og:image" content="https://example.com/logo.jpg" />
-        <meta property="og:url" content="https://example.com/cek-resi" />
-        <meta name="twitter:title" content="Cek Resi" />
         <meta
-          name="twitter:description"
-          content="Cek nomor resi pengiriman paket"
+          name="google-site-verification"
+          content="HlyXKSMRB1N2kb9GwttIUnelISfSoWGzpE3-tDTkjoU"
         />
-        <meta name="twitter:image" content="https://example.com/logo.jpg" />
       </Head>
       <body className={inter.className}>
         {children}
