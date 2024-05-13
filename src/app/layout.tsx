@@ -23,6 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <title>Cek Resi</title>
+        <meta
+          name="google-site-verification"
+          content="HlyXKSMRB1N2kb9GwttIUnelISfSoWGzpE3-tDTkjoU"
+        />
         <meta name="description" content="Cek nomor resi pengiriman paket" />
         <meta
           name="keywords"
@@ -32,10 +36,6 @@ export default function RootLayout({
         <meta
           property="og:description"
           content="Cek nomor resi pengiriman paket"
-        />
-        <meta
-          name="google-site-verification"
-          content="HlyXKSMRB1N2kb9GwttIUnelISfSoWGzpE3-tDTkjoU"
         />
       </Head>
       <body className={inter.className}>
